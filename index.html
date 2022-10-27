@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Eugene HTML5 app</title>
+    <meta name="description" content="A simple HTML5 app.">
+    <meta name="author" content="Eugene Rechkunov">
+
+    <style>
+        div {
+            display: inline;
+            width: 200px;
+            height: 200px;
+            border: dotted 2px black;
+            margin: 40px;
+            border-radius: 20px;
+            text-align:center;
+            vertical-align:middle;
+            transition: background-color linear 1s;
+            transition: border-width linear 1s;
+            transition: border-radius ease-in-out 2s;
+        }
+        #content {
+            width:800px;
+            display:flex;
+            flex-flow:row;
+        }
+        #one {
+
+            background-color:aqua;
+        }
+        #two {
+
+            background-color:blueviolet;
+        }
+        #three {
+
+            background-color: burlywood;
+        }
+
+        div:hover {
+            cursor: pointer;
+            background-color: chocolate !important;
+            border-width: 10px;
+            border-radius: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="content">
+        <div id="one" onclick="alert('Hi Eugene!')">1</div>
+        <div id="two" onclick="alert(`What a horrible name! ${prompt('What is your name?')}!!!`)">2</div>
+        <div id="three" onclick="this.innerText=prompt('What is your name?')">3</div>
+    </div>
+</body>
+</html>
