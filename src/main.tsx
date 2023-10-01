@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import MainPage from './pages/Main/index.tsx';
 import QuestionPage, {loader as questionLoader} from './pages/Question/index.tsx';
+import ScorePage from './pages/Score/index.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />}/>
       <Route path="test" element={<MainPage />} />
       <Route path="question/:questionId" element={<QuestionPage />} loader={questionLoader} />
+      <Route path="score" element={<ScorePage />}/>
     </>
 )
 );
