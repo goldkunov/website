@@ -9,7 +9,6 @@ export const Questions = async () => {
     records.forEach(record => {
         if (record && record.fields){
             questions.push({id: record.id, ...record.fields});
-            console.log(JSON.stringify(record.fields));
         }
     })
     return questions;

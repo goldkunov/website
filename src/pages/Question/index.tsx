@@ -22,8 +22,6 @@ const QuestionPage = () => {
     const navigate = useNavigate();
     const loadQuestions = useCallback(() => {Questions().then(questions => setQuestions(questions))},[setQuestions]); 
     
-    console.log(person?.Name);
-
     useEffect(() => loadQuestions(), []);
     
     useEffect(() => {
@@ -40,7 +38,8 @@ const QuestionPage = () => {
     },[questions, questionId]);
 
     const saveAnswer = (PersonID: string, QuestionID: string, AnswerID: number) => {
-        const index = answers.findIndex(answer => answer.PersonID === PersonID && answer.QuestionID === QuestionID);
+        const index = answers.findIndex(answer => answer.PersonID.localeCompare(PersonID)
+                                                  + answer.QuestionID.localeCompare(QuestionID) === 0);
         if (index !== -1) {
             answers[index].AnswerID = AnswerID;
         } else {

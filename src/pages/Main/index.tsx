@@ -8,7 +8,6 @@ const MainPage = () => {
     const [person, setPerson] = useStore((state) => [state.person.person, state.person.setPerson]);
     const [name, setName] = useState(person?.Name || '');
     const test = () => {
-        console.log(name);
         setPerson({id: '', Name: name});
         navigate('/question/1');
     }
